@@ -385,7 +385,13 @@ def main(args):
 
 def cli_main():
     parser = options.get_preprocessing_parser()
-    args = parser.parse_args()
+    args = parser.parse_args('--only-source \
+    --srcdict gpt2_bpe/dict.txt \
+    --trainpref gpt2_bpe/weather-agg-DFE.bpe \
+    --validpref gpt2_bpe/weather-agg-DFE.bpe \
+    --testpref gpt2_bpe/weather-agg-DFE.bpe \
+    --destdir gpt2_bpe/weather_agg \
+    --workers 60')
     main(args)
 
 
